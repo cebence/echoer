@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/cebence/echoer/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/cebence/echoer</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>
+    Initial release of the Echoer tool.
+    Echoer is a simple command-line utility that can be used to test console-redirection and/or output parsing logic.
+    The tool can echo a custom text to the `stdout` or `stderr` console stream, exit with a specific exit code, and simulate a long running process.
+    See https://github.com/cebence/echoer/blob/master/README.md for the details.
+    </releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>testing</tags>
+  </metadata>
+</package>

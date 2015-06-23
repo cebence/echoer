@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("echoer")]
-[assembly: AssemblyDescription("Simple console echo utility")]
+[assembly: AssemblyDescription("Echoe text to selected console streams")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Dejan Cebetarevic")]
 [assembly: AssemblyProduct("echoer")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]

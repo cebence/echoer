@@ -1,6 +1,7 @@
 # Echoer utility
 
 [![Build status](https://ci.appveyor.com/api/projects/status/ha27gy4l3m56xgn9?svg=true)](https://ci.appveyor.com/project/cebence/echoer)
+[![NuGet version](https://img.shields.io/nuget/v/echoer.svg)](https://www.nuget.org/packages/echoer/)
 
 A simple command-line utility that can be used to test console-redirection and/or parsing logic.
 
@@ -62,4 +63,5 @@ This project is licensed under the [MIT license](LICENSE) so feel free to use it
 If the tool is to be used in a strong-name environment feel free to sign it with the appropriate `.snk` file.
 
 ## TODOs
-- [ ] Make it a [NuGet](https://www.nuget.org/) (or [Chocolatey](https://chocolatey.org/)?) package and publish it.
+- [x] Make it a [NuGet](https://www.nuget.org/) package and publish it.
+- [ ] Add support for `-env ENVVAR_NAME` - print variable's value to stdout.
