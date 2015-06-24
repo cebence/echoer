@@ -17,7 +17,7 @@ namespace Echoer {
     /// <summary>
     /// Maximum allowed sleep interval is one day, i.e. 24 hours.
     /// </summary>
-    public const int MAX_SECONDS = HOUR;
+    public const int MAX_SECONDS = DAY;
 
     private TimeSpan interval;
 

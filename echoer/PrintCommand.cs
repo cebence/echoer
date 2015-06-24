@@ -2,8 +2,6 @@
 /// License: MIT
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Echoer {
   /// <summary>
@@ -37,19 +35,28 @@ namespace Echoer {
         Console.WriteLine(text);
       }
       else {
-        // Print out stderr output in bright red text.
-        ConsoleColor savedColor = Console.ForegroundColor;
-        Console.ForegroundColor = ConsoleColor.Red;
-
-        Console.Error.WriteLine(text);
-
-        Console.ForegroundColor = savedColor;
+        PrintToError(text);
       }
     }
 
     public override String ToString() {
       return String.Format("Print '{0}' to {1}.",
           text, toStdOut ? "stdout" : "stderr");
+    }
+
+    /// <summary>
+    /// Prints out the <paramref name="text"> to <c>stderr</c> in bright red.
+    /// </summary>
+    /// <param name="text">
+    /// Text to print out to <c>stderr</c>.
+    /// </param>
+    public static void PrintToError(String text) {
+      ConsoleColor savedColor = Console.ForegroundColor;
+      Console.ForegroundColor = ConsoleColor.Red;
+
+      Console.Error.WriteLine(text);
+
+      Console.ForegroundColor = savedColor;
     }
   }
 }

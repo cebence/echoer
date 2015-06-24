@@ -15,10 +15,12 @@ namespace Echoer {
         p.Execute();
       }
       catch (Exception e) {
-        Console.WriteLine("ERROR: {0}", e.Message);
+        PrintCommand.PrintToError(String.Format("ERROR: {0}", e.Message));
         if (e.InnerException != null) {
-          Console.WriteLine("  Caused by: {0}", e.InnerException.Message);
+          PrintCommand.PrintToError(String.Format(
+              "  Caused by: {0}", e.InnerException.Message));
         }
+        Environment.Exit(1);
       }
     }
 
@@ -27,6 +29,7 @@ namespace Echoer {
     private const String ARG_HELP = "--help";
     private const String ARG_STDOUT = "-out";
     private const String ARG_STDERR = "-err";
+    private const String ARG_ENVVAR = "-env";
     private const String ARG_WAIT = "-wait";
     private const String ARG_EXIT = "-exit";
     #endregion
@@ -76,6 +79,7 @@ namespace Echoer {
 
           case ARG_STDOUT:
           case ARG_STDERR:
+          case ARG_ENVVAR:
           case ARG_WAIT:
           case ARG_EXIT:
             if (i < args.Length) {
@@ -97,6 +101,9 @@ namespace Echoer {
         case ARG_STDOUT:
         case ARG_STDERR:
           return new PrintCommand(parameter, ARG_STDOUT.Equals(name));
+
+        case ARG_ENVVAR:
+          return new EnvVarCommand(parameter);
 
         case ARG_WAIT:
           return new SleepCommand(Convert.ToInt32(parameter));
@@ -122,6 +129,8 @@ namespace Echoer {
       Console.WriteLine("Commands (can repeat, executed in order):");
       Console.WriteLine("  -out <TEXT>         Echo the text to stdout.");
       Console.WriteLine("  -err <TEXT>         Echo the text to stderr.");
+      Console.WriteLine("  -env <VAR_NAME>     Echo %VAR_NAME% to stdout (if variable is set).");
+      Console.WriteLine("                      If variable is not set exit with error.");
       Console.WriteLine("  -wait <INTEGER>     Wait for the specified number of seconds.");
       Console.WriteLine("  -exit <INTEGER>     Exit with the specified exit code.");
       Console.WriteLine("");

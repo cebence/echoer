@@ -55,6 +55,7 @@
     <Compile Include="ExitCommand.cs"/>
     <Compile Include="PrintCommand.cs"/>
     <Compile Include="SleepCommand.cs"/>
+    <Compile Include="EnvVarCommand.cs"/>
     <Compile Include="Properties\AssemblyInfo.cs"/>
   </ItemGroup>
   <ItemGroup>
