@@ -5,7 +5,7 @@
 
 A simple command-line utility that can be used to test console-redirection and/or parsing logic.
 
-The tool can echo a message to the `stdout` or `stderr` console stream, exit with a specific exit code, and simulate long running processing.
+The tool can echo custom text to the `stdout` or `stderr` console stream, exit with a specific exit code, check environment variable values, and simulate long running processing ending in success or failure.
 
 The tool will exit with a `0` exit code unless specified otherwise, or an invalid command argument is specified.
 
@@ -41,7 +41,7 @@ echoer -out 3 -wait 1 -out 2 -wait 1 -out 1 -wait 1 -err GO!
 The same command, when `debug` switch is ON, will produce the following output:
 
 ```
-> echoer -out 3 -wait 1 -out 2 -wait 1 -out 1 -wait 1 -err GO!
+> echoer -out 3 -wait 1 -out 2 -wait 1 -out 1 -wait 1 -err GO! --debug
 
 Print '3' to stdout.
 Wait for 00:00:01.
