@@ -82,3 +82,5 @@ If the tool is to be used in a strong-name environment feel free to sign it with
 ## TODOs
 - [x] Make it a [NuGet](https://www.nuget.org/) package and publish it.
 - [x] Add support for `-env ENVVAR_NAME` - print variable's value to stdout.
+- [ ] Add support for optional time units, e.g. `-wait 1h59m59s`, defaulting to seconds (regex `((\d+(ns|ms|d|h|m|s))+)`).
+- [ ] Add support to override internal time limit of one day, `--no-wait-limit`?!
