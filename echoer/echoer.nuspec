@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<package >
+<package>
   <metadata>
     <id>echoer</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>echoer</title>
     <authors>Dejan Ćebetarević</authors>
     <owners>Dejan Ćebetarević</owners>
@@ -17,10 +17,12 @@ See https://github.com/cebence/echoer/blob/master/README.md for the details.
     </description>
     <summary>Echoer is a command-line utility that can be used to test console redirection and/or output parsing logic.</summary>
     <releaseNotes>
-Introduced the "-env VAR_NAME" command for checking environment variable values.
-Fixed a bug in the "wait" command, maximum wait interval is one day (86400 seconds).
+Executable moved to "tools" per NuGet packaging conventions.
     </releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>testing</tags>
   </metadata>
+  <files>
+    <file src="..\build\bin\release\echoer.exe" target="tools"/>
+  </files>
 </package>

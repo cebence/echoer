@@ -1,3 +1,3 @@
 @echo off
 
-nuget pack echoer\echoer.csproj -Prop Configuration=Release
+nuget pack echoer\echoer.nuspec -o build
